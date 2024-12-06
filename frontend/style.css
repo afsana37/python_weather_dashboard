@@ -73,3 +73,49 @@ button:hover {
     background-color: #f0f8ff;
     padding: 5px;
 }
+
+/* Recent Searches Section */
+#recent-searches {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#recent-searches h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#history button {
+    margin: 5px 5px 0 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#history button:hover {
+    background-color: #0056b3;
+}
+
+.clear-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background-color: #cc0000;
+}

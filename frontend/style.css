@@ -1,121 +1,72 @@
+/* Center-align the app and add some padding */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f8ff;
+    min-height: 100vh;
 }
 
-#app {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-}
-
-input, button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 90%;
-    font-size: 16px;
-}
-
-button {
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
+/* Style the weather result card */
 #result {
-    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    background-color: #e9f5ff;
-    border: 1px solid #007bff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-#result.show {
-    display: block;
-    opacity: 1;
+    margin-top: 20px;
 }
 
 #result h3 {
-    color: #0056b3;
-    font-size: 24px;
-}
-
-#result p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-#result img {
-    display: block;
-    margin: 10px auto;
-    width: 100px;
-    height: auto;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    background-color: #f0f8ff;
-    padding: 5px;
-}
-
-/* Recent Searches Section */
-#recent-searches {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#recent-searches h2 {
-    font-size: 18px;
+    color: #007bff;
     margin-bottom: 10px;
+}
+
+/* Forecast styling */
+#forecast div {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Recent searches */
+#recent-searches h2 {
+    font-size: 20px;
     color: #333;
 }
 
 #history button {
-    margin: 5px 5px 0 0;
-    padding: 5px 10px;
     font-size: 14px;
+    padding: 5px 10px;
     color: white;
-    background-color: #007bff;
+    background-color: #6c757d;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #history button:hover {
-    background-color: #0056b3;
+    background-color: #5a6268;
 }
 
-.clear-btn {
-    margin-top: 10px;
-    padding: 5px 10px;
+/* Clear history button */
+#clear-history {
     font-size: 14px;
+    padding: 5px 10px;
+    background-color: #dc3545;
     color: white;
-    background-color: #ff4d4d;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.clear-btn:hover {
-    background-color: #cc0000;
+#clear-history:hover {
+    background-color: #c82333;
 }

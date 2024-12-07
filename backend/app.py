@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify
 import requests
 from flask_cors import CORS
 from datetime import datetime
@@ -9,12 +9,10 @@ load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
 CORS(app)
-app.secret_key = "your_secret_key"  # Replace with a strong secret key
 
 API_KEY = os.getenv("API_KEY")
 
 
-# Get current weather
 @app.route('/weather', methods=['GET'])
 def get_weather():
     city = request.args.get('city')
@@ -41,7 +39,6 @@ def get_weather():
     })
 
 
-# Get 5-day forecast
 @app.route('/forecast', methods=['GET'])
 def get_forecast():
     city = request.args.get('city')
@@ -62,8 +59,8 @@ def get_forecast():
         daily_forecast.append({
             "date": item['dt_txt'].split(' ')[0],
             "temperature": f"{item['main']['temp']}°C",
-            "condition": item['weather'][0]['description'],
-            "icon": item['weather'][0]['icon']
+            "condition": item['weather'][0]["description"],
+            "icon": item['weather'][0]["icon"]
         })
 
     return jsonify({"city": forecast_data["city"]["name"], "forecast": daily_forecast})
@@ -71,3 +68,4 @@ def get_forecast():
 
 if __name__ == '__main__':
     app.run(debug=True)
+

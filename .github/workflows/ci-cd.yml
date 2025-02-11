@@ -1,4 +1,4 @@
-name: Docker Build and Push
+name: CI/CD Pipeline
 
 on:
   push:
@@ -17,16 +17,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Run Python Linter (Flake8)
+        uses: cclauss/python-lint-action@v1
         with:
-          python-version: "3.9"
-
-      - name: Install Python Linter
-        run: pip install flake8
-
-      - name: Lint Backend
-        run: flake8 backend --max-line-length=88
+          path: "backend"
+          args: "--max-line-length=88"
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -56,7 +51,7 @@ jobs:
 
       - name: Build and Push Backend Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/weather-backend:latest ./backend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/weather-backend:latest ./backend --build-arg WEATHER_API_KEY=${{ secrets.WEATHER_API_KEY }}
           docker push ${{ secrets.DOCKER_USERNAME }}/weather-backend:latest
 
       - name: Build and Push Frontend Image

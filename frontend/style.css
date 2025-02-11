@@ -1,72 +1,70 @@
-/* Center-align the app and add some padding */
+/* Light Mode Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #e6f7ff; /* Light blue background */
+    color: #212529;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
 }
 
-/* Style the weather result card */
-#result {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 20px;
-}
-
-#result h3 {
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-/* Forecast styling */
-#forecast div {
-    background-color: #ffffff;
+.card, #forecast div {
+    background-color: #ffffff; /* Keep cards white for contrast */
+    color: #212529; /* Text color for readability */
     border: 1px solid #dee2e6;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin: 5px;
-    display: inline-block;
-    text-align: center;
 }
 
-/* Recent searches */
-#recent-searches h2 {
-    font-size: 20px;
-    color: #333;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #212529; /* Dark background for dark mode */
+    color: #f8f9fa;
 }
 
-#history button {
-    font-size: 14px;
-    padding: 5px 10px;
-    color: white;
+body.dark-mode .card,
+body.dark-mode #forecast div {
+    background-color: #343a40;
+    color: #f8f9fa;
+    border-color: #454d55;
+}
+
+/* Dark Mode - Search Bar */
+body.dark-mode input {
+    background-color: #a7d0f5; /* Lighter blue for better contrast */
+    color: #1a3d7c; /* Dark blue for search text */
+    border: 1px solid #6c757d;
+}
+
+body.dark-mode input::placeholder {
+    color: #316ea9; /* Medium blue for placeholder text */
+    font-weight: bold; /* Make the placeholder text bold */
+}
+
+body.dark-mode input:focus {
+    background-color: #90c6f0; /* Slightly darker blue on focus */
+    color: #1a3d7c; /* Keep search text dark blue */
+    border-color: #80bdff; /* Blue border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow */
+}
+
+/* Dark Mode - Buttons */
+body.dark-mode .btn {
     background-color: #6c757d;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    color: #ffffff;
+    border-color: #6c757d;
 }
 
-#history button:hover {
+body.dark-mode .btn:hover {
     background-color: #5a6268;
+    border-color: #5a6268;
 }
 
-/* Clear history button */
-#clear-history {
-    font-size: 14px;
-    padding: 5px 10px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#clear-history:hover {
-    background-color: #c82333;
+/* Dark Mode - Weather Icons */
+body.dark-mode img {
+    background-color: #ffffff; /* Add a white background to the icon */
+    border-radius: 50%; /* Make the background circular */
+    padding: 5px; /* Add padding around the icon */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Add a subtle white glow */
+    border: 1px solid #cccccc; /* Add a light border for contrast */
+    filter: brightness(0.9) saturate(0.8); /* Adjust brightness and saturation */
 }

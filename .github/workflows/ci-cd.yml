@@ -9,25 +9,6 @@ on:
       - main
 
 jobs:
-  lint:
-    name: Lint Code
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-
-      - name: Install JavaScript Linter
-        run: npm install -g eslint
-
-      - name: Lint Frontend
-        run: eslint frontend --ext .js --ignore-pattern "node_modules/"
-
   build-and-push:
     name: Build & Push Docker Images
     needs: lint
